@@ -43,6 +43,9 @@ INSTALLED_APPS = [
     'users',
     'video',
     'channels',
+    'playlists',
+    'comments',
+    'subscriptions',
     'api',
     
     'rest_framework',
@@ -146,3 +149,14 @@ STATIC_URL = 'static/'
 # https://docs.djangocore.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+EMAIL_BACKEND = config('EMAIL_BACKEND')
+EMAIL_HOST = config('EMAIL_HOST')
+EMAIL_PORT = config('EMAIL_PORT')
+EMAIL_USE_TLS = config('EMAIL_USE_TLS') or False
+EMAIL_HOST_USER = config('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
+DEFAULT_FROM_EMAIL = config('DEFAULT_FROM_EMAIL')
+
+FRONTEND_URL = 'http://127.0.0.1:8000/api/users'
